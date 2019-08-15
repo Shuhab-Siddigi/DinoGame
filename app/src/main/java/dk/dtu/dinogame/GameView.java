@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -29,7 +30,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
 
-        player = new Player(BitmapFactory.decodeResource(getResources(),R.drawable.dinowalk_1));
+        player = new Player(BitmapFactory.decodeResource(getResources(), R.drawable.dinowalk_1));
 
         // Starts the game Thread
         gameThread.setRunning(true);
@@ -53,21 +54,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-    public void update(){
-    player.update();
+    public void update() {
+        player.update();
     }
-
 
 
     // This is where you draw Items
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
+
         if (canvas != null) {
-
-        player.draw(canvas);
-
-
+            player.draw(canvas);
         }
 
 
